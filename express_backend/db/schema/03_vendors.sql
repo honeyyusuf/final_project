@@ -11,7 +11,7 @@ CREATE TABLE vendors (
   company_url VARCHAR(255),
   contact_method VARCHAR(255),
   handle VARCHAR(255),
-  desc VARCHAR(255) NOT NULL,
+  description VARCHAR(255) NOT NULL,
   comments VARCHAR(255),
   stage_id INTEGER REFERENCES stages(id) ON DELETE CASCADE,
   reviewer_id INTEGER REFERENCES reviewers(id) ON DELETE CASCADE
