@@ -1,9 +1,21 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+module.exports = ({ getUsers, getProducts }) => {
+  /* GET users listing. */
+  router.get('/', function(req, res) {
+    getUsers()
+      .then(users => res.json(users))
+      .catch(err => res.json({ msg: err.message }))
+  });
+  
+  /* GET vendor products */
+  router.get('/products', function(req, res) {
+    getProducts()
+      .then(vendorProducts => res.json(vendorProducts))
+      .catch(err => res.json({ msg: err.message }))
+  });
 
-module.exports = router;
+ return router;
+}
+
