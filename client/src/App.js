@@ -9,14 +9,14 @@ import Nav from './navbar';
 import useSaveInputs from './hooks/useSaveInputs';
 import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
- const{state,signUp} = useSaveInputs();
+  const { state, signUp } = useSaveInputs();
 
- console.log(state);
- 
+  console.log(state);
+
   return (
     <div className="App">
       <Nav></Nav>
-      
+
       <Home onSave={signUp}></Home>
     </div>
   );
