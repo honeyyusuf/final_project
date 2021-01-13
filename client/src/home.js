@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 //import Image from 'react-bootstrap/Image';
+import './home.css';
 
 export default function FormExample(props) {
   const [validated, setValidated] = useState(false);
@@ -54,28 +55,29 @@ export default function FormExample(props) {
 
     <Container>
 
-      <Row>
-        <h2>
-          Vendor Application
+    <Row className="d-flex justify-content-center mt-5 mb-5">
+      <h2>
+        Vendor Application
       </h2>
-      </Row >
+    </Row >
 
 
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <Form.Row >
-          <Form.Group as={Col} md="4" controlId="validationCustom01">
-            <Form.Label>First name</Form.Label>
+      <Form.Row className="d-flex justify-content-between">
+          <Form.Group as={Col} controlId="validationCustom01">
+            <Form.Label className="d-flex flex-row">First name</Form.Label>
             <Form.Control
               required
               type="text"
               name='firstName'
               value={state.firstName}
               onChange={handleChange}
+              className="rounded-0"
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="4" controlId="validationCustom02">
-            <Form.Label>Last name</Form.Label>
+          <Form.Group as={Col} controlId="validationCustom02">
+            <Form.Label  className="d-flex flex-row">Last name</Form.Label>
             <Form.Control
               required
               type="text"
@@ -83,47 +85,52 @@ export default function FormExample(props) {
               name='lastName'
               value={state.lastName}
               onChange={handleChange}
+              className="rounded-0"
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
         </Form.Row>
-        <Form.Row >
-          <Form.Group as={Col} md="4" controlId="validationCustom03">
-            <Form.Label>Company Name</Form.Label>
+        <Form.Row className="d-flex justify-content-between">
+        <Form.Group as={Col}  controlId="validationCustom03">
+          <Form.Label className="d-flex flex-row">Company Name</Form.Label>
             <Form.Control type="text" placeholder="Company name" required
               value={state.company}
               name='company'
-              onChange={handleChange} />
+              onChange={handleChange} 
+              className="rounded-0" />
 
           </Form.Group>
-          <Form.Group as={Col} md="4" controlId="validationCustom04">
+          <Form.Group as={Col} controlId="validationCustom04">
             <Form.Label>Title in Company</Form.Label>
             <Form.Control type="text" placeholder="CEO" required
               value={state.title}
               name='title'
-              onChange={handleChange} />
+              onChange={handleChange}
+              className="rounded-0" />
           </Form.Group>
         </Form.Row>
 
-        <Form.Row >
-          <Form.Group as={Col} md="4" controlId="validationCustom05">
-            <Form.Label>Email</Form.Label>
+        <Form.Row className="d-flex justify-content-between">
+        <Form.Group as={Col}  controlId="validationCustom05">
+          <Form.Label className="d-flex flex-row">Email</Form.Label>
             <Form.Control type="email" placeholder="user@email.com" required
               value={state.email}
               name='email'
-              onChange={handleChange} />
+              onChange={handleChange} 
+              className="rounded-0"/>
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
 
           </Form.Group>
-          <Form.Group as={Col} md="4" controlId="validationCustom06">
-            <Form.Label>Phone Number</Form.Label>
+          <Form.Group as={Col} controlId="validationCustom06">
+            <Form.Label className="d-flex flex-row">Phone Number</Form.Label>
             <Form.Control type="phone number" placeholder="000-000-0000" required
               value={state.phone}
               name='phone'
-              onChange={handleChange} />
+              onChange={handleChange} 
+              className="rounded-0"/>
           </Form.Group>
         </Form.Row>
-        <Form.Row >
+        <Form.Row className="d-flex flex-row mt-3">
           <p>
             Preferred method of contact
         </p>
@@ -164,49 +171,53 @@ export default function FormExample(props) {
             </Col>
           </Form.Group>
         </Form.Row>
-        <Form.Row >
-          <Form.Group as={Col} md="4" controlId="validationCustom03">
-            <Form.Label>Company Website</Form.Label>
+        <Form.Row className="d-flex justify-content-between">
+        <Form.Group as={Col}  controlId="validationCustom03">
+          <Form.Label className="d-flex flex-row">Company Website</Form.Label>
             <Form.Control type="text" placeholder="Company name" required
               value={state.companyUrl}
               name='companyUrl'
-              onChange={handleChange} />
+              onChange={handleChange} 
+              className="rounded-0"/>
 
           </Form.Group>
-          <Form.Group as={Col} md="4" controlId="validationCustom03">
-            <Form.Label>Company Instagram</Form.Label>
+          <Form.Group as={Col} controlId="validationCustom03">
+            <Form.Label className="d-flex flex-row">Company Instagram</Form.Label>
             <Form.Control type="text" placeholder="Company name" required
               value={state.handle}
               name='handle'
-              onChange={handleChange} />
+              onChange={handleChange} 
+              className="rounded-0"/>
 
           </Form.Group>
         </Form.Row>
 
         <Form.Group controlId="exampleForm.ControlTextarea1" >
-          <Form.Label>Brief Company Description</Form.Label>
+          <Form.Label className="d-flex flex-row">Brief Company Description</Form.Label>
           <Form.Control as="textarea" rows={3}
             value={state.description}
             name='description'
-            onChange={handleChange} />
+            onChange={handleChange} 
+            className="rounded-0"/>
         </Form.Group>
         <Form.Group controlId="exampleForm.ControlTextarea1" >
-          <Form.Label>Questions or Comments
+          <Form.Label className="d-flex flex-row">Questions or Comments
     </Form.Label>
           <Form.Control as="textarea" rows={3} value={state.comments}
             name='comments'
-            onChange={handleChange} />
+            onChange={handleChange} 
+            className="rounded-0"/>
         </Form.Group>
-        <Form.Group >
+        <Form.Group className="d-flex justify-content-center">
           <Form.Check
             required
             label="Agree to terms and conditions"
             feedback="You must agree before submitting."
           />
         </Form.Group>
-        <Button type="submit" variant="success"
-
-        >Submit</Button>
+        <Form.Group className="d-flex justify-content-center" >
+      <Button type="submit" variant="success" >Submit</Button>
+      </Form.Group>
       </Form>
     </Container>
   );

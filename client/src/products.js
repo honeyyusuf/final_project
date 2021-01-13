@@ -8,7 +8,7 @@ const handelChange = ()=>{
 
 export default function product() {
  
-  return(<Button type="submit" onClick={handelChange}>
-    Add Product list
+  return(<Button type="submit" onClick={handelChange} className="rounded-0">
+    Add to Product list
   </Button>)
 }

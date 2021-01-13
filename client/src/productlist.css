@@ -1,0 +1,19 @@
+@media screen and (max-width: 1024px) {
+  .form-row {
+    display: flex;
+    flex-direction: column
+  }
+  
+}
+.col {
+  margin-top: 10px;
+}
+.form-group {
+  margin-top: 12px;
+}
+.product-info-divide {
+  margin-top: 20px;
+}
+div {
+  text-align: left;
+}
