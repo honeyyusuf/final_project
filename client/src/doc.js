@@ -1,7 +1,7 @@
 import React from "react";
 import Container from 'react-bootstrap/Container';
-import bsCustomFileInput from 'bs-custom-file-input';
-import Form from 'react-bootstrap/Form';
+//import bsCustomFileInput from 'bs-custom-file-input';
+//import Form from 'react-bootstrap/Form';
 
 export default function page() {
 
